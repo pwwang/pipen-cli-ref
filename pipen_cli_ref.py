@@ -85,6 +85,8 @@ def generate_doc(proc: Type[Proc], args: argx.Namespace, i: int, total: int) -> 
     for key, val in anno.items():
         if key == "Summary" or key in args.hide_sections:
             continue
+        if key == "Envs" and len(val) == 0:
+            continue
         key = title_replaces.get(key, key)
         val = format_section(val, title=key, show_hidden=args.show_hidden_items)
         doc += f"{val}\n\n"
