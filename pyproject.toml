@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pipen-cli-ref"
+version = "0.0.0"
+description = "Make API reference documentation for pipen pipeline/processes"
+authors = ["pwwang <1188067+pwwang@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pipen = "^0.12"
+pipen-annotate = "^0.11.3"
+
+[tool.poetry.plugins.pipen_cli]
+cli-ref = "pipen_cli_ref:PipenCliRefPlugin"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
