@@ -23,12 +23,13 @@ With different sets of arguments, a single function of the above can perform dif
 
 Before we explain each environment variable in details in the next section, we will give some examples here to show how the environment variables are organized in order for a single function to perform different tasks.<br />
 
-```toml
+```python
 # Repertoire overlapping
 [Immunarch.envs.overlaps]
 # The method to calculate the overlap, passed to `repOverlap`
 method = "public"
 ```
+
 
 What if we want to calculate the overlap by different methods at the same time? We can use the following configuration:<br />
 
@@ -515,56 +516,4 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.trackings` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.trackings.target`, `envs.trackings.subject_col`, and `envs.trackings.subjects`.<br />
-- `kmers` *(`ns`)*: *Default: `{'k': 5, 'head': 10, 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'profiles': Diot({'method': 'self', 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}), 'cases': Diot({})}`*. <br />
-    Arguments for kmer analysis.<br />
-    - `k` *(`type=int`)*: *Default: `5`*. <br />
-        The length of kmer.<br />
-    - `head` *(`type=int`)*: *Default: `10`*. <br />
-        The number of top kmers to show.<br />
-    - `vis_args` *(`type=json`)*: *Default: `{}`*. <br />
-        Other arguments for the plotting functions.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
-        The parameters for the plotting device.<br />
-        - `width` *(`type=int`)*: *Default: `1000`*. <br />
-            The width of the plot.<br />
-        - `height` *(`type=int`)*: *Default: `1000`*. <br />
-            The height of the plot.<br />
-        - `res` *(`type=int`)*: *Default: `100`*. <br />
-            The resolution of the plot.<br />
-    - `profiles` *(`ns;order=8`)*: *Default: `{'method': 'self', 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
-        Arguments for sequence profilings.<br />
-        - `method` *(`choice`)*: *Default: `self`*. <br />
-            The method for the position matrix.<br />
-            For more information see https://en.wikipedia.org/wiki/Position_weight_matrix.<br />
-            - `freq`:
-                position frequency matrix (PFM) - a matrix with occurences of each amino acid in each position.<br />
-            - `prob`:
-                position probability matrix (PPM) - a matrix with probabilities of each amino acid in each position.<br />
-            - `wei`:
-                position weight matrix (PWM) - a matrix with log likelihoods of PPM elements.<br />
-            - `self`:
-                self-information matrix (SIM) - a matrix with self-information of elements in PWM.<br />
-        - `vis_args` *(`type=json`)*: *Default: `{}`*. <br />
-            Other arguments for the plotting functions.<br />
-        - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
-            The parameters for the plotting device.<br />
-            - `width` *(`type=int`)*: *Default: `1000`*. <br />
-                The width of the plot.<br />
-            - `height` *(`type=int`)*: *Default: `1000`*. <br />
-                The height of the plot.<br />
-            - `res` *(`type=int`)*: *Default: `100`*. <br />
-                The resolution of the plot.<br />
-        - `cases` *(`type=json`)*: *Default: `{}`*. <br />
-            If you have multiple cases, you can use this argument to specify them.<br />
-            The keys will be the names of the cases.<br />
-            The values will be passed to the corresponding arguments above.<br />
-            If any of these arguments are not specified, the values in `envs.kmers.profiles` will be used.<br />
-            If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
-            values of `envs.kmers.profiles.method`, `envs.kmers.profiles.vis_args` and `envs.kmers.profiles.devpars`.<br />
-    - `cases` *(`type=json;order=9`)*: *Default: `{}`*. <br />
-        If you have multiple cases, you can use this argument to specify them.<br />
-        The keys will be used as the names of the cases.<br />
-        The values will be passed to the corresponding arguments above.<br />
-        If any of these arguments are not specified, the default case will be added, with the name `DEFAULT` and the
-        values of `envs.kmers.k`, `envs.kmers.head`, `envs.kmers.vis_args` and `envs.kmers.devpars`.<br />
 

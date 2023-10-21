@@ -23,13 +23,10 @@ class Immunarch(Proc):
         With different sets of arguments, a single function of the above can perform different tasks. For example, `repExplore` can be used to get the statistics of the size of the repertoire, the statistics of the length of the CDR3 region, or the statistics of the number of the clonotypes. Other than that, you can also have different ways to visualize the results, by passing different arguments to the [`immunarch::vis`](https://immunarch.com/reference/vis.html) function. For example, you can pass `.by` to `vis` to visualize the results of `repExplore` by different groups.
 
         Before we explain each environment variable in details in the next section, we will give some examples here to show how the environment variables are organized in order for a single function to perform different tasks.
-
-        ```toml
-        # Repertoire overlapping
-        [Immunarch.envs.overlaps]
-        # The method to calculate the overlap, passed to `repOverlap`
-        method = "public"
-        ```
+        >>> # Repertoire overlapping
+        >>> [Immunarch.envs.overlaps]
+        >>> # The method to calculate the overlap, passed to `repOverlap`
+        >>> method = "public"
 
         What if we want to calculate the overlap by different methods at the same time? We can use the following configuration:
 
@@ -377,7 +374,7 @@ class Immunarch(Proc):
                 If any of these arguments are not specified, the values in `envs.trackings` will be used.
                 If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
                 values of `envs.trackings.target`, `envs.trackings.subject_col`, and `envs.trackings.subjects`.
-        kmers (ns): Arguments for kmer analysis.
+        kmers (ns;hidden): Arguments for kmer analysis.
             - k (type=int): The length of kmer.
             - head (type=int): The number of top kmers to show.
             - vis_args (type=json): Other arguments for the plotting functions.
