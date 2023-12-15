@@ -5,6 +5,8 @@ class Immunarch(Proc):
     """Exploration of Single-cell and Bulk T-cell/Antibody Immune Repertoires
 
     See https://immunarch.com/articles/web_only/v3_basic_analysis.html
+    See <url1>
+    See <url2>
 
     After [`ImmunarchLoading`](./ImmunarchLoading.md) loads the raw data into an [immunarch](https://immunarch.com) object,
     this process wraps the functions from [`immunarch`](https://immunarch.com) to do the following:

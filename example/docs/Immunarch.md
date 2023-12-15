@@ -3,6 +3,8 @@
 Exploration of Single-cell and Bulk T-cell/Antibody Immune Repertoires
 
 See https://immunarch.com/articles/web_only/v3_basic_analysis.html
+See https://google.com
+See https://github.com
 
 After [`ImmunarchLoading`](./ImmunarchLoading.md) loads the raw data into an [immunarch](https://immunarch.com) object,
 this process wraps the functions from [`immunarch`](https://immunarch.com) to do the following:<br />
@@ -106,12 +108,12 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
     The mutaters passed to `dplyr::mutate()` on `immdata$meta` to add new columns.<br />
     The keys will be the names of the columns, and the values will be the expressions.<br />
     The new names can be used in `volumes`, `lens`, `counts`, `top_clones`, `rare_clones`, `hom_clones`, `gene_usages`, `divs`, etc.<br />
-- `volumes` *(`ns`)*: *Default: `{'by': None, 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+- `volumes` *(`ns`)*:
     Explore clonotype volume (sizes).<br />
     - `by`:
         Groupings when visualize clonotype volumes, passed to the `.by` argument of `vis(imm_vol, .by = <values>)`.<br />
         Multiple columns should be separated by `,`.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -126,12 +128,12 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.volumes` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.volume.by`, `envs.volume.devpars`.<br />
-- `lens` *(`ns`)*: *Default: `{'by': None, 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+- `lens` *(`ns`)*:
     Explore clonotype CDR3 lengths.<br />
     - `by`:
         Groupings when visualize clonotype lengths, passed to the `.by` argument of `vis(imm_len, .by = <values>)`.<br />
         Multiple columns should be separated by `,`.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -146,12 +148,12 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.lens` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.lens.by`, `envs.lens.devpars`.<br />
-- `counts` *(`ns`)*: *Default: `{'by': None, 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+- `counts` *(`ns`)*:
     Explore clonotype counts.<br />
     - `by`:
         Groupings when visualize clonotype counts, passed to the `.by` argument of `vis(imm_count, .by = <values>)`.<br />
         Multiple columns should be separated by `,`.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -166,14 +168,14 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.counts` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.counts.by`, `envs.counts.devpars`.<br />
-- `top_clones` *(`ns`)*: *Default: `{'by': None, 'marks': [10, 100, 1000, 3000, 10000, 30000, 100000.0], 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+- `top_clones` *(`ns`)*:
     Explore top clonotypes.<br />
     - `by`:
         Groupings when visualize top clones, passed to the `.by` argument of `vis(imm_top, .by = <values>)`.<br />
         Multiple columns should be separated by `,`.<br />
     - `marks` *(`list;itype=int`)*: *Default: `[10, 100, 1000, 3000, 10000, 30000, 100000.0]`*. <br />
         A numerical vector with ranges of the top clonotypes. Passed to the `.head` argument of `repClonoality()`.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -188,7 +190,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.top_clones` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.top_clones.by`, `envs.top_clones.marks` and `envs.top_clones.devpars`.<br />
-- `rare_clones` *(`ns`)*: *Default: `{'by': None, 'marks': [1, 3, 10, 30, 100], 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+- `rare_clones` *(`ns`)*:
     Explore rare clonotypes.<br />
     - `by`:
         Groupings when visualize rare clones, passed to the `.by` argument of `vis(imm_rare, .by = <values>)`.<br />
@@ -196,7 +198,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
     - `marks` *(`list;itype=int`)*: *Default: `[1, 3, 10, 30, 100]`*. <br />
         A numerical vector with ranges of abundance for the rare clonotypes in the dataset.<br />
         Passed to the `.bound` argument of `repClonoality()`.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -211,12 +213,12 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.rare_clones` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.rare_clones.by`, `envs.rare_clones.marks` and `envs.rare_clones.devpars`.<br />
-- `hom_clones` *(`ns`)*: *Default: `{'by': None, 'marks': Diot({'Rare': 1e-05, 'Small': 0.0001, 'Medium': 0.001, 'Large': 0.01, 'Hyperexpanded': 1.0}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+- `hom_clones` *(`ns`)*:
     Explore homeo clonotypes.<br />
     - `by`:
         Groupings when visualize homeo clones, passed to the `.by` argument of `vis(imm_hom, .by = <values>)`.<br />
         Multiple columns should be separated by `,`.<br />
-    - `marks` *(`ns`)*: *Default: `{'Rare': 1e-05, 'Small': 0.0001, 'Medium': 0.001, 'Large': 0.01, 'Hyperexpanded': 1.0}`*. <br />
+    - `marks` *(`ns`)*:
         A dict with the threshold of the half-closed intervals that mark off clonal groups.<br />
         Passed to the `.clone.types` arguments of `repClonoality()`.<br />
         The keys could be:<br />
@@ -230,7 +232,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
             the large clonotypes
         - `Hyperexpanded` *(`type=float`)*: *Default: `1.0`*. <br />
             the hyperexpanded clonotypes
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -245,7 +247,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.hom_clones` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.hom_clones.by`, `envs.hom_clones.marks` and `envs.hom_clones.devpars`.<br />
-- `overlaps` *(`ns`)*: *Default: `{'method': 'public', 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'analyses': Diot({'method': 'none', 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}), 'cases': Diot({})}`*. <br />
+- `overlaps` *(`ns`)*:
     Explore clonotype overlaps.<br />
     - `method` *(`choice`)*: *Default: `public`*. <br />
         The method to calculate overlaps.<br />
@@ -270,7 +272,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
             incremental overlaps of the N most abundant clonotypes with incrementally growing N using the morisita method.<br />
     - `vis_args` *(`type=json`)*: *Default: `{}`*. <br />
         Other arguments for the plotting functions `vis(imm_ov, ...)`.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -278,7 +280,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
             The height of the plot.<br />
         - `res` *(`type=int`)*: *Default: `100`*. <br />
             The resolution of the plot.<br />
-    - `analyses` *(`ns;order=8`)*: *Default: `{'method': 'none', 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+    - `analyses` *(`ns;order=8`)*:
         Perform overlap analyses.<br />
         - `method`: *Default: `none`*. <br />
             Plot the samples with these dimension reduction methods.<br />
@@ -288,7 +290,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
             See https://immunarch.com/reference/repOverlapAnalysis.html
         - `vis_args` *(`type=json`)*: *Default: `{}`*. <br />
             Other arguments for the plotting functions.<br />
-        - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+        - `devpars` *(`ns`)*:
             The parameters for the plotting device.<br />
             - `width` *(`type=int`)*: *Default: `1000`*. <br />
                 The width of the plot.<br />
@@ -310,7 +312,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.overlaps` will be used.<br />
         If NO cases are specified, the default case will be added, with the key the default method and the
         values of `envs.overlaps.method`, `envs.overlaps.vis_args`, `envs.overlaps.devpars` and `envs.overlaps.analyses`.<br />
-- `gene_usages` *(`ns`)*: *Default: `{'top': 30, 'norm': False, 'by': None, 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'analyses': Diot({'method': 'none', 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}), 'cases': Diot({})}`*. <br />
+- `gene_usages` *(`ns`)*:
     Explore gene usages.<br />
     - `top` *(`type=int`)*: *Default: `30`*. <br />
         How many top (ranked by total usage across samples) genes to show in the plots.<br />
@@ -322,7 +324,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         Multiple columns should be separated by `,`.<br />
     - `vis_args` *(`type=json`)*: *Default: `{}`*. <br />
         Other arguments for the plotting functions.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -330,7 +332,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
             The height of the plot.<br />
         - `res` *(`type=int`)*: *Default: `100`*. <br />
             The resolution of the plot.<br />
-    - `analyses` *(`ns;order=8`)*: *Default: `{'method': 'none', 'vis_args': Diot({}), 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+    - `analyses` *(`ns;order=8`)*:
         Perform gene usage analyses.<br />
         - `method`: *Default: `none`*. <br />
             The method to control how the data is going to be preprocessed and analysed.<br />
@@ -340,7 +342,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
             See https://immunarch.com/articles/web_only/v5_gene_usage.html.<br />
         - `vis_args` *(`type=json`)*: *Default: `{}`*. <br />
             Other arguments for the plotting functions.<br />
-        - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+        - `devpars` *(`ns`)*:
             The parameters for the plotting device.<br />
             - `width` *(`type=int`)*: *Default: `1000`*. <br />
                 The width of the plot.<br />
@@ -362,7 +364,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.gene_usages` will be used.<br />
         If NO cases are specified, the default case will be added, with the name `DEFAULT` and the
         values of `envs.gene_usages.top`, `envs.gene_usages.norm`, `envs.gene_usages.by`, `envs.gene_usages.vis_args`, `envs.gene_usages.devpars` and `envs.gene_usages.analyses`.<br />
-- `spects` *(`ns`)*: *Default: `{'quant': None, 'col': None, 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({'By_Clonotype': Diot({'quant': 'id', 'col': 'nt'}), 'By_Num_Clones': Diot({'quant': 'count', 'col': 'aa+v'})})}`*. <br />
+- `spects` *(`ns`)*:
     Spectratyping analysis.<br />
     - `quant`:
         Select the column with clonal counts to evaluate.<br />
@@ -376,7 +378,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         E.g., pass "aa+v" for spectratyping on CDR3 amino acid sequences paired with V gene segments,
         i.e., in this case a unique clonotype is a pair of CDR3 amino acid and V gene segment.<br />
         Clonal counts of equal clonotypes will be summed up.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the plot.<br />
@@ -391,7 +393,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         If any of these arguments are not specified, the values in `envs.spects` will be used.<br />
         By default, a `By_Clonotype` case will be added, with the values of `quant = "id"` and `col = "nt"`, and
         a `By_Num_Clones` case will be added, with the values of `quant = "count"` and `col = "aa+v"`.<br />
-- `divs` *(`ns`)*: *Default: `{'filter': None, 'method': 'gini', 'by': None, 'args': Diot({}), 'order': [], 'test': Diot({'method': 'none', 'padjust': 'none'}), 'separate_by': None, 'align_x': False, 'align_y': False, 'log': False, 'devpars': Diot({'width': 1000, 'height': 1000, 'res': 100}), 'cases': Diot({})}`*. <br />
+- `divs` *(`ns`)*:
     Parameters to control the diversity analysis.<br />
     - `filter`:
         The filter passed to `dplyr::filter()` to filter the data for each sample before calculating diversity.<br />
@@ -445,7 +447,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
     - `order` *(`list`)*: *Default: `[]`*. <br />
         The order of the values in `by` on the x-axis of the plots.<br />
         If not specified, the values will be used as-is.<br />
-    - `test` *(`ns`)*: *Default: `{'method': 'none', 'padjust': 'none'}`*. <br />
+    - `test` *(`ns`)*:
         Perform statistical tests between each pair of groups.<br />
         Does NOT work for `raref`.<br />
         - `method` *(`choice`)*: *Default: `none`*. <br />
@@ -483,7 +485,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         Align the y-axis of multiple plots. Only works for `raref`.<br />
     - `log` *(`flag`)*: *Default: `False`*. <br />
         Indicate whether we should plot with log-transformed x-axis using `vis(.log = TRUE)`. Only works for `raref`.<br />
-    - `devpars` *(`ns`)*: *Default: `{'width': 1000, 'height': 1000, 'res': 100}`*. <br />
+    - `devpars` *(`ns`)*:
         The parameters for the plotting device.<br />
         - `width` *(`type=int`)*: *Default: `1000`*. <br />
             The width of the device
@@ -497,7 +499,7 @@ Generally, you don't need to specify `cases` if you only have one case. A defaul
         The values will be passed to the corresponding arguments above.<br />
         If NO cases are specified, the default case will be added, with the name of `envs.div.method`.<br />
         The values specified in `envs.div` will be used as the defaults for the cases here.<br />
-- `trackings` *(`ns`)*: *Default: `{'targets': None, 'subject_col': 'Sample', 'subjects': [], 'cases': Diot({})}`*. <br />
+- `trackings` *(`ns`)*:
     Parameters to control the clonotype tracking analysis.<br />
     - `targets`:
         Either a set of CDR3AA seq of clonotypes to track (separated by `,`), or simply an integer to track the top N clonotypes.<br />

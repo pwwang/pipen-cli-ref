@@ -93,6 +93,16 @@ def generate_doc(proc: Type[Proc], args: argx.Namespace, i: int, total: int) -> 
 
         doc += f"{val}\n\n"
 
+    for rep in args.replace or []:
+        if "=" not in rep:
+            print(
+                f"Invalid replacement: {rep}. Should be in the format of `old=new`.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        old, new = rep.split("=", 1)
+        doc = doc.replace(old, new)
+
     destfile = f"{args.destdir}/{proc.name}.md"
     with open(destfile, "w", encoding="utf8") as fout:
         fout.write(doc)
@@ -165,6 +175,11 @@ class PipenCliRefPlugin(CLIPlugin):
             "--hide-sections",
             action="append",
             help="Hiden some sections in docstring"
+        )
+        subparser.add_argument(
+            "--replace",
+            action="append",
+            help="Replace placeholders in the docstring in the format of `old=new`."
         )
 
     def exec_command(self, args: argx.Namespace) -> None:
