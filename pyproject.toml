@@ -8,8 +8,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pipen = "^0.12"
-pipen-annotate = "^0.11.5"
+pipen = "^0.13"
+pipen-annotate = "^0.12"
 
 [tool.poetry.plugins.pipen_cli]
 cli-ref = "pipen_cli_ref:PipenCliRefPlugin"

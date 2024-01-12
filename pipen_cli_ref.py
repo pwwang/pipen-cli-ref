@@ -83,7 +83,7 @@ def generate_doc(proc: Type[Proc], args: argx.Namespace, i: int, total: int) -> 
         title_replaces[old] = new
 
     for key, val in anno.items():
-        if key == "Summary" or key in args.hide_sections:
+        if key == "Summary" or key in (args.hide_sections or ()):
             continue
 
         key = title_replaces.get(key, key)
