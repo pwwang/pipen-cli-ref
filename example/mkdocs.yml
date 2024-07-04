@@ -1,0 +1,7 @@
+site_name: pipen-cli-ref example
+theme:
+    name: 'rtd'
+plugins:
+    - search # necessary for search to work
+nav:
+    - 'Example': 'Immunarch.md'
