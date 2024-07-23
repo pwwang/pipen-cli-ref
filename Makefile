@@ -1,5 +1,5 @@
 example:
-	pipen ref \
+	poetry run pipen ref \
 		-p "example/pipeline.py:Pipeline" \
 		-d example/docs/ \
 		-i Input \
