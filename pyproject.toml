@@ -9,7 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 # pipen = "^0.15.0"
-pipen-annotate = "^0.14"
+pipen-annotate = { version = "^0.15.0a1", allow-prereleases = true }
 
 [tool.poetry.group.mkdocs.dependencies]
 mkdocs = "^1.6"

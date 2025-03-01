@@ -3,8 +3,8 @@
 Exploration of Single-cell and Bulk T-cell/Antibody Immune Repertoires
 
 See https://immunarch.com/articles/web_only/v3_basic_analysis.html
-See https://google.com
-See https://github.com
+See <https://google.com>
+See <https://github.com>
 
 After [`ImmunarchLoading`](./ImmunarchLoading.md) loads the raw data into an [immunarch](https://immunarch.com) object,
 this process wraps the functions from [`immunarch`](https://immunarch.com) to do the following:<br />
@@ -102,7 +102,17 @@ TSNE = { "-method": "tsne" }
 
 Generally, you don't need to specify `cases` if you only have one case. A default case will be created for you. For multiple cases, the arguments at the same level as `cases` will be inherited by all cases.<br />
 
-## Environment Variables
+## Input
+
+- `immdata`:
+    The data loaded by `immunarch::repLoad()`
+
+## Output
+
+- `outdir`: *Default: `{{in.immdata | stem}}.immunarch`*. <br />
+    The output directory
+
+## Envs
 
 - `mutaters` *(`type=json;order=-9`)*: *Default: `{}`*. <br />
     The mutaters passed to `dplyr::mutate()` on `immdata$meta` to add new columns.<br />
