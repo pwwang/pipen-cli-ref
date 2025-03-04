@@ -25,7 +25,7 @@ if TYPE_CHECKING:
     from pipen import Proc
     from pipen_annotate.sections import Mixin
 
-__version__ = "0.5.0a1"
+__version__ = "0.5.0"
 
 args = argx.ArgumentParser(
     description=("Make API reference documentation for pipen pipeline/processes.")

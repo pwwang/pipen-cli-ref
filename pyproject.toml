@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pipen-cli-ref"
-version = "0.5.0a1"
+version = "0.5.0"
 description = "Make API reference documentation for pipen pipeline/processes"
 authors = ["pwwang <1188067+pwwang@users.noreply.github.com>"]
 license = "MIT"
@@ -8,8 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-# pipen = "^0.15.0"
-pipen-annotate = { version = "^0.15.0a1", allow-prereleases = true }
+pipen-annotate = "^0.15"
 
 [tool.poetry.group.mkdocs.dependencies]
 mkdocs = "^1.6"
