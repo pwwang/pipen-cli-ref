@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pipen-cli-ref"
-version = "0.5.1"
+version = "1.0.0"
 description = "Make API reference documentation for pipen pipeline/processes"
 authors = ["pwwang <1188067+pwwang@users.noreply.github.com>"]
 license = "MIT"
