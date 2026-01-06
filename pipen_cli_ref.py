@@ -13,12 +13,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Type
 
 import sys
-import asyncio
 import textwrap
 
 import argx
 from pipen.utils import load_pipeline
-from pipen.cli import CLIPlugin
+from pipen.cli import AsyncCLIPlugin
 from pipen_annotate import annotate
 
 if TYPE_CHECKING:
@@ -121,7 +120,7 @@ async def main(args: argx.Namespace) -> None:
         generate_doc(proc, args, i + 1, total)
 
 
-class PipenCliRefPlugin(CLIPlugin):
+class PipenCliRefPlugin(AsyncCLIPlugin):
     """Make API reference documentation for pipen pipeline/processes."""
 
     version = __version__
@@ -182,6 +181,6 @@ class PipenCliRefPlugin(CLIPlugin):
             help="Replace placeholders in the docstring in the format of `old=new`."
         )
 
-    def exec_command(self, args: argx.Namespace) -> None:
+    async def exec_command(self, args: argx.Namespace) -> None:
         """Execute the command"""
-        asyncio.run(main(args))
+        await main(args)
